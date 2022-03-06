@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" id="html">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
+    <style type="text/css">
+        html {
+            cursor: url("https://i.ibb.co/VN6w7LY/frog.png"), pointer; 
+            cursor: url("https://i.ibb.co/0MC5vCm/frogg.png"), default; 
+            -moz-user-select: none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+
+            /*
+                Introduced in Internet Explorer 10.
+                See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+            */
+            -ms-user-select: none;
+            user-select: none;
+        }
+        body {
+            width: 100vw;
+            margin: 0;
+            padding: 0;
+            height: 70vh;
+            font-family: 'Fredoka', sans-serif;
+            background-color: rgba(0, 0, 0, 0.974);
+            -moz-user-select: none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            overflow: hidden;
+
+            /*
+                Introduced in Internet Explorer 10.
+                See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+            */
+            -ms-user-select: none;
+            user-select: none;
+        }
+        #container {
+            position: absolute;
+            bottom: 10vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 64%;
+        }
+
+        @keyframes madAnimation {
+            100% {background-color: rgb(110, 22, 22)}
+        }
+        @keyframes sadAnimation {
+            100% {background-color: rgb(64, 105, 158)}
+        }
+        @keyframes hornyAnimation {
+            100% {background-color: rgb(129, 82, 236)}
+        }
+        @keyframes attentionAnimation {
+            100% {background-color: rgb(207, 171, 105)}
+        }
+        @keyframes happyAnimation {
+            14% {background-color: #ff0000;}
+            28% {background-color: #ff7f00;}
+            42% {background-color: #FFFF00;}
+            56% {background-color: #00ff00;}
+            71% {background-color: #0000ff;}
+            85% {background-color: #4B0082;}
+            100% {background-color: #9300d3;}
+        }
+        .sad {
+            background-position: 0% 28% !important;
+            background-image: url("https://i.pinimg.com/originals/6a/dc/87/6adc878b255111abc1f13748a257d38f.gif");
+        }
+
+        .happy {
+            background-image: url("https://64.media.tumblr.com/8ee6a4716128772aea6a5632ce139049/4b3f6851a01718b0-28/s1280x1920/7b4725ba951a8247b9ccff70d0b608f812ca63ae.gifv");
+        }
+
+        .horny {
+            background-position: 0% 25% !important;
+            background-image: url("https://64.media.tumblr.com/b7681e7a8633a2f4924915cd1556e44c/tumblr_inline_o6ojrwyv2r1u4lygk_500.gifv");
+        }
+
+        .mad {
+            background-image: url("https://i.pinimg.com/originals/4a/d7/c6/4ad7c64ddaa413648effb7c49c9098cf.gif");
+        }
+
+        .madAnim { 
+            animation: madAnimation 1s ease-in-out 0s infinite alternate;
+        }
+        .sadAnim { 
+            animation: sadAnimation 2s ease-in-out 0s infinite alternate;
+        }
+        .hornyAnim { 
+            animation: hornyAnimation .1s linear 0s infinite alternate;
+        }
+        .attentionAnim { 
+            animation: attentionAnimation 2s ease-in-out 0s infinite alternate;
+        }
+        .happyAnim { 
+            animation: happyAnimation 2s ease-in-out 0s infinite alternate;
+        }
+
+        .kursor {
+            cursor: url("https://i.ibb.co/VN6w7LY/frog.png"), auto !important; 
+        }
+        .kursor2 {
+            cursor: url("https://i.ibb.co/0MC5vCm/frogg.png"), auto !important; 
+        }
+
+
+        .attention {
+            background-image: url("https://i.pinimg.com/originals/7b/27/60/7b276032c26c8cb3d18a999dfedf7497.gif");
+        }
+		#form-wrapper{
+            visibility: hidden;
+
+		}
+
+		#submit{
+            visibility: visible;
+            position: absolute;
+            bottom: 3vh;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            cursor: url("https://i.ibb.co/VN6w7LY/frog.png"), pointer; 
+		}
+
+		#submitdiv {
+            visibility: visible;
+		  height: 80px !important;
+		  width: 120px;
+            cursor: url("https://i.ibb.co/VN6w7LY/frog.png"), pointer; 
+		}
+
+        h1{
+            text-align: center;
+            margin-top: 2vh;
+            color: white;
+        }
+        h2{
+            text-align: center;
+            margin-bottom: 3vh;
+            letter-spacing: 4px;
+        }
+        #wrapper {
+            text-align: center;
+        }
+        .btn {
+            font-size: 1.2em;
+            cursor: url("https://i.ibb.co/VN6w7LY/frog.png"), pointer !important;  
+        }
+
+        .edit {
+            color: white;
+            mix-blend-mode: difference !important;
+            opacity: 0.5;
+            font-size: 2em;
+        }
+        .trail { /* className for the trail elements */
+            position: absolute;
+            height: 10px; width: 10px;
+            border-radius: 5px;
+            background: white;
+        }
+        
+        @media only screen and (max-width: 600px) {
+            #submit:hover {
+                background-color: black;
+            }
+            .edit {
+                font-size: 1.1em !important;
+            }
+            #container {
+                background-position: center !important;
+            }
+        }
+        
+	</style>
+</head>
+<body id="body">
+    <h1>Panel Kornelciowy</h1>
+    <h2 id="updater">Status: {{ actmood|lower }}</h2>
+    <div id="container"></div>
+    <div id="wrapper">
+        {% for mood in moods %}
+            <button onclick="editItem('{{forloop.counter0}}')" class="edit btn btn-primary">{{mood}}</button>
+        {% endfor %}
+    </div>
+
+    <!-- invisible -->
+    <div id="form-wrapper">
+        <form id="form">
+            <div>
+                <div id="submitdiv" style="float:right;">
+                    <input id="submit" class="btn btn-outline-light" type="submit" value="Potwierdz" >
+                </div>
+                <div style="width: 90%">
+                    <input id="title" class="form-control" type="text" name="title" placeholder="Dodaj nowy post">
+                </div>
+                <div style="width: 90%">
+                    <input id="tresc" class="form-control" type="text" name="tresc" placeholder="Treść posta">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function updateInfo(){
+            dater = document.getElementById("updater")
+            mood_str = document.getElementById('title').value
+            if (mood_str == "") {
+                mood_str_updater = "Status: {{ actmood|lower }}"
+                mood_str = "{{ actmood }}"
+                updater.innerHTML = mood_str_updater
+            } else {
+            updater.innerHTML = "Status: "+document.getElementById('title').value.toLowerCase()}
+            body = document.getElementById('container')
+            body_color = document.getElementById('body')
+            if (mood_str == "Sad") {
+                body.className = ("sad");
+                body_color.className = "sadAnim";
+            } else if (mood_str == "Happy") {
+                body.className = "happy";
+                body_color.className = "happyAnim";
+            } else if (mood_str == "Mad") {
+                body.className = "mad";
+                body_color.className = "madAnim";
+            } else if (mood_str == "Horny") {
+                body.className = "horny";
+                body_color.className = "hornyAnim";
+            } else if (mood_str == "Attention") {
+                body.className = "attention";
+                body_color.className = "attentionAnim";
+            }
+        }
+        updateInfo()
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim();
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        var csrftoken = getCookie('csrftoken');
+        var activeItem = null
+
+
+
+        buildList()
+
+        function buildList(){
+            // var url = 'http://127.0.0.1:8000/api/pesel-list/'
+            var url = "{{request.build_absolute_uri}}"+"api/pesel-list/"
+
+            fetch(url)
+            .then((resp) => resp.json())
+            .then(function(data){
+                // s
+
+            })
+        }
+
+        
+        html = document.getElementById('html')
+        html.addEventListener("mousedown", function(){html.className = ("kursor");});
+        html.addEventListener("mouseup", function(){html.className = ("kursor2");});
+        
+
+        var form = document.getElementById('form-wrapper')
+		form.addEventListener('submit', function(e){
+			e.preventDefault()
+			console.log('Form submitted')
+            var url = "{{request.build_absolute_uri}}"+"api/pesel-create/"
+			if (activeItem != null){
+            var url = "{{request.build_absolute_uri}}"+"api/pesel/"
+				activeItem = null
+			}
+
+			var title = document.getElementById('title').value
+			var tresc = document.getElementById('tresc').value
+			updateInfo()
+
+			fetch(url, {
+				method:'POST',
+				headers:{
+					'Content-type':'application/json',
+					'X-CSRFToken':csrftoken,
+				},
+				body:JSON.stringify({'nazwa':title, 'wartosc_samopoczucia':tresc})
+			}
+			).then(function(response){
+				buildList()
+				document.getElementById('form').reset()
+			})
+		})
+
+        
+		function editItem(item){
+			console.log('Item clicked', item)
+			activeItem = item
+
+			document.getElementById('title').value = "{{ moods|safe }}".split(",")[item].split(": ")[1].replace(">", "").replace(">", "").replace("]", "")
+			document.getElementById('tresc').value = "{{ moods.values|safe }}".split("},")[item].split(",")[2].split(':')[1].replace("}", "").replace(">", "").replace("]", "").replace(" ", "")
+		}
+
+            
+                // dots is an array of Dot objects,
+        // mouse is an object used to track the X and Y position
+        // of the mouse, set with a mousemove event listener below
+        var dots = [],
+            mouse = {
+            x: -100,
+            y: 0
+            };
+
+        // The Dot object used to scaffold the dots
+        var Dot = function() {
+        this.x = 0;
+        this.y = 0;
+        this.node = (function(){
+            var n = document.createElement("div");
+            n.className = "trail";
+            document.body.appendChild(n);
+            return n;
+        }());
+        };
+        // The Dot.prototype.draw() method sets the position of 
+        // the object's <div> node
+        Dot.prototype.draw = function() {
+        this.node.style.left = this.x + "px";
+        this.node.style.top = this.y + "px";
+        };
+
+        // Creates the Dot objects, populates the dots array
+        for (var i = 0; i < 30; i++) {
+        var d = new Dot();
+        dots.push(d);
+        }
+
+        // This is the screen redraw function
+        function draw() {
+        // Make sure the mouse position is set everytime
+            // draw() is called.
+        var x = mouse.x,
+            y = mouse.y;
+        
+        // This loop is where all the 90s magic happens
+        dots.forEach(function(dot, index, dots) {
+            var nextDot = dots[index + 1] || dots[0];
+            
+            dot.x = x;
+            dot.y = y;
+            dot.draw();
+            x += (nextDot.x - dot.x) * .6;
+            y += (nextDot.y - dot.y) * .6;
+
+        });
+        }
+
+        addEventListener("mousemove", function(event) {
+        //event.preventDefault();
+        mouse.x = event.pageX;
+        mouse.y = event.pageY;
+        });
+
+        // animate() calls draw() then recursively calls itself
+        // everytime the screen repaints via requestAnimationFrame().
+        function animate() {
+            draw();
+            requestAnimationFrame(animate);
+        }
+
+        // And get it started by calling animate().
+        animate();
+        animate();
+        animate();
+        animate();
+        animate();
+        animate();
+        animate();
+
+    </script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
